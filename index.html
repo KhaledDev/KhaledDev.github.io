@@ -1,68 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KhaledDev_ Portfolio</title>
-    <h2 class="title">KhaledDev_ Portfolio</h2>
-    <div class="socials">
-        <div >
-            <a  href="https://www.youtube.com/@KhaledDev_" 
-                target="_blank" 
-                class="socials_text"
-            >
-            Youtube
-            </a>
-            <a href="https://github.com/KhaledDev" 
-               target="_blank" 
-               class="socials_text"
-            >
-            Github
-            </a>
-            <a  
-               href="https://x.com/KhaledDev_" 
-               target="_blank" 
-               class="socials_text"
-            >
-            X(Twitter)
-            </a>
-        </div>
-    </div>
-    <h4 class="info">Data Analytics</h4>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="current_projects">
-        <div class="current_projects_list">
-            <h2>Current Projects</h2>
-            <li> <a href="https://github.com/NOM-Network/Twitchchat_Reader" target="_blank">Twitch Intgeration</a> & DQN Developer for Melba Toast (C#/Python)</li>
-            <li> Business App (Sole Developer,Python(Flask), Typescript(ReactNative))</li>
-            <li> Mai AI Vtuber (Python(AI,Backend), Unity(C#,Frontend))</li>
-        </div>
-    </div>
-    <div class="past_projects">
-        <div class="past_projects_list">
-            <h2>Past Projects</h2>
-            <ul>
-                <li><a href="https://khaleddevv.itch.io/within-the-maze" target="_blank">Within the Maze</a> - Sole Developer (Unity)</li>
-                <li><a href="https://khaleddevv.itch.io/brawl-beam" target="_blank">BrawlBeam</a> - Sole Developer (Unity)</li>
-                <li><a href="https://khaleddevv.itch.io/ghost-hunter" target="_blank">Ghost Hunter</a> - Sole Developer (Unity)</li>
-                <li><a href="https://khaleddevv.itch.io/dead-patient" target="_blank">Dead Patient</a> - Sole Developer (Unity)</li>
-                <li><a href="https://khaleddevv.itch.io/gummys-factory" target="_blank">Gummy's Factory</a> - Sole Developer (Unity)</li>
-                <li><a href="https://khaleddevv.itch.io/gunshooter" target="_blank">GunShooter</a> - Sole Developer (Unity)</li>
-                <li><a href="https://www.roblox.com/games/9939359023/Jumping-Simulator" target="_blank">Jumping Simulator</a> - Sole Developer (Roblox)</li>
-                <li><a href="https://www.roblox.com/games/13711662313/Obby-BUT-LIGHTNING-FLASHES-EVERY-SECOND" target="_blank">Obby but You Can't See</a> - Sole Developer (Roblox)</li>
-                <li>Mai LLM AI - Developer</li>
-                <li>Mai Discord Bot Wrapper - Developer</li>
-                <li>Friday Night Funkin' AI Mod - Developer</li>
-                <li>Al Sakab “السكب” - Project Lead</li>
-                <li>Food Empire - Sole Developer (Unity)</li>
-                <li>Computer Programming Helper App - Sole Developer (Java)</li>
-                <li><a href="https://github.com/KhaledDev/SEN122-Helper-app">Computer Programming Helper App V2</a> - Sole Developer (C#, Unity)</li>
-            </ul>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="hero">
+                <h1 class="title">KhaledDev_</h1>
+                <p class="subtitle">Data Analytics & Game Developer</p>
+                <p class="description">Passionate developer creating innovative solutions in AI, Game Development, and Data Analytics</p>
+            </div>
+            
+            <div class="socials">
+                <a href="https://www.youtube.com/@KhaledDev_" target="_blank" class="social-link">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="https://github.com/KhaledDev" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://x.com/KhaledDev_" target="_blank" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="https://www.instagram.com/khaleddev_" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </header>
 
-        </div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Current Projects Section -->
+            <section class="projects-section current-projects">
+                <h2 class="section-title">
+                    <i class="fas fa-rocket"></i>
+                    Current Projects
+                </h2>
+                <div class="projects-grid">
+                    <div class="project-card current expandable" data-expandable="true">
+                        <div class="project-card-main">
+                            <h3>Twitch Integration & DQN</h3>
+                            <p>Advanced AI integration for Melba Toast with deep reinforcement learning</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">AI/ML</span>
+                            </div>
+                            <a href="https://github.com/NOM-Network/Twitchchat_Reader" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <button class="expand-btn card-expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="project-card-details">
+                            <div class="secondary-links">
+                                <a href="https://github.com/NOM-Network/Twitchchat_Reader" target="_blank" class="secondary-link">
+                                    <i class="fab fa-github"></i>
+                                    Source Code
+                                </a>
+                                <a href="https://youtu.be/K5eaWSwSN6Q?si=DIqsSSdhda8VWQpR&t=469" target="_blank" class="secondary-link">
+                                    <i class="fab fa-video"></i>
+                                    Live Melba Toast Playing stream
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card current">
+                        <h3>Mai AI VTuber</h3>
+                        <p>Interactive AI virtual character with advanced backend systems</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Closed Source</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card current">
+                        <h3>Advertisement WhatsApp Bot Detector</h3>
+                        <p>AI-powered tool for detecting and managing advertisement bots on WhatsApp</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Java Script</span>
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">Open Source</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Unity Projects Section -->
+            <section class="projects-section unity-projects">
+                <h2 class="section-title">
+                    <i class="fab fa-unity"></i>
+                    Unity Projects
+                </h2>
+                <div class="projects-list">
+                    
+                    <!-- Within the Maze -->
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <a href="https://khaleddevv.itch.io/within-the-maze" target="_blank" class="project-name">Within the Maze</a>
+                            <span class="project-role">Sole Developer</span>
+                            <span class="project-status">Published</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">A challenging maze puzzle game with unique mechanics and atmospheric design.</p>
+                            <div class="secondary-links">
+                                <a href="https://khaleddevv.itch.io/within-the-maze" target="_blank" class="secondary-link">
+                                    <i class="fas fa-gamepad"></i>
+                                    Play Game
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=lFUUBmMqqwQ" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Gameplay video
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=mtwnh4gd5rk" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Trailer
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=SJRH5zTBJGg" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Devlog video
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- BrawlBeam -->
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <a href="https://khaleddevv.itch.io/brawl-beam" target="_blank" class="project-name">BrawlBeam</a>
+                            <span class="project-role">Sole Developer</span>
+                            <span class="project-status">Published</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">Fast-paced action game with beam combat mechanics and dynamic gameplay.</p>
+                            <div class="secondary-links">
+                                <a href="https://khaleddevv.itch.io/brawl-beam" target="_blank" class="secondary-link">
+                                    <i class="fas fa-gamepad"></i>
+                                    Play Game
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=_VK0lUGZnuw" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Devlog video
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ghost Hunter -->
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <a href="https://khaleddevv.itch.io/ghost-hunter" target="_blank" class="project-name">Ghost Hunter</a>
+                            <span class="project-role">Sole Developer</span>
+                            <span class="project-status">Published</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">A thrilling ghost hunting experience with unique mechanics.</p>
+                            <div class="secondary-links">
+                                <a href="https://khaleddevv.itch.io/ghost-hunter" target="_blank" class="secondary-link">
+                                    <i class="fas fa-gamepad"></i>
+                                    Play Game
+                                </a>
+                                <a href="https://youtu.be/6U7PChXk7QI?si=5HnIGUC0qeHoxHq-" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Trailer 1
+                                </a>
+                                <a href="https://youtu.be/LV3gx9MqWSU?si=H5k35InuMNfpLt7R" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Trailer 2
+                                </a>
+                                <a href="https://youtu.be/9erzyAmWf6s?si=psYa0H9xTNaOE8CU" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Devlog 1
+                                </a>
+                                <a href="https://youtu.be/TfnGtNax8bE?si=6LU86QRXWPIfNINS" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Devlog 2
+                                </a>
+                                <a href="https://youtu.be/x4ZHcJcz7qI?si=VaRZkcJaZwXZr6lx" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Devlog 3
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dead Patient -->
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <a href="https://khaleddevv.itch.io/dead-patient" target="_blank" class="project-name">Dead Patient</a>
+                            <span class="project-role">Sole Developer</span>
+                            <span class="project-status">Published</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p class="project-description">A horror game made during the Brackeys Game Jam.</p>
+                            <div class="secondary-links">
+                                <a href="https://khaleddevv.itch.io/dead-patient" target="_blank" class="secondary-link">
+                                    <i class="fas fa-gamepad"></i>
+                                    Play Game
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=TOukMAwF9nI" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Devlog video
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gummy's Factory -->
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <a href="https://khaleddevv.itch.io/gummys-factory" target="_blank" class="project-name">Gummy's Factory</a>
+                            <span class="project-role">Sole Developer</span>
+                            <span class="project-status">Published</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p class="project-description">A short horror game where you explore a haunted factory filled with a monster gummy bear.</p>
+                            <div class="secondary-links">
+                                <a href="https://khaleddevv.itch.io/gummys-factory" target="_blank" class="secondary-link">
+                                    <i class="fas fa-gamepad"></i>
+                                    Play Game
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=vSGkoCWdsuI" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Devlog video
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GunShooter -->
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <a href="https://khaleddevv.itch.io/gunshooter" target="_blank" class="project-name">GunShooter</a>
+                            <span class="project-role">Sole Developer</span>
+                            <span class="project-status">Published</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">A fast-paced 2D scroller shooting game.</p>
+                            <div class="secondary-links">
+                                <a href="https://khaleddevv.itch.io/gunshooter" target="_blank" class="secondary-link">
+                                    <i class="fas fa-gamepad"></i>
+                                    Play Game
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=MsiOFPKLTnA" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Devlog video
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=IWiUHjFCU6w" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Gameplay video
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Food Empire -->
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <span class="project-name">Food Empire</span>
+                            <span class="project-role">Sole Developer</span>
+                            <span class="project-status">Abandoned</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">A game about building a food empire.</p>
+                            <div class="secondary-links">
+                                <a href="#" target="_blank" class="secondary-link">
+                                    <i class="fas fa-video"></i>
+                                    Gameplay video
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Computer Programming Helper App V2 -->
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <a href="https://github.com/KhaledDev/SEN122-Helper-app" target="_blank" class="project-name">Computer Programming Helper App V2</a>
+                            <span class="project-role">Sole Developer</span>
+                            <span class="project-status">Open Source</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">Educational tool to help students learn computer programming concepts with interactive examples.</p>
+                            <div class="secondary-links">
+                                <a href="https://github.com/KhaledDev/SEN122-Helper-app" target="_blank" class="secondary-link">
+                                    <i class="fab fa-github"></i>
+                                    Source Code
+                                </a>
+                                <a href="https://github.com/KhaledDev/SEN122-Helper-app/releases/tag/Release" target="_blank" class="secondary-link">
+                                    <i class="fas fa-download"></i>
+                                    Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI/ML Projects Section -->
+            <section class="projects-section ai-projects">
+                <h2 class="section-title">
+                    <i class="fas fa-brain"></i>
+                    AI/ML Projects
+                </h2>
+                <div class="projects-list">
+                    
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <span class="project-name">Meteora Mystic Merge AI</span>
+                            <span class="project-role">Developer</span>
+                            <span class="project-status">Completed</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p class="project-description">Reinforcement learning AI model to play the game "Meteora Mystic Merge", created for the AI Vtuber Melba Toast</p>
+                            <div class="secondary-links">
+                                <a href="https://youtu.be/K5eaWSwSN6Q?si=DIqsSSdhda8VWQpR&t=469" target="_blank" class="secondary-link">
+                                    <i class="fab fa-video"></i>
+                                    Live Melba Toast Playing stream
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <span class="project-name">Friday Night Funkin' AI Mod</span>
+                            <span class="project-role">Developer</span>
+                            <span class="project-status">Active</span>
+                            <span class="project-status">Open Source</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="project-details">
+                            <p class="project-description">An Reinforcement Learning AI model to play the popular Friday Night Funkin' game.</p>
+                            <div class ="secondary-links">
+                                <a href="https://github.com/KhaledDev/Funkin-AI/tree/integration-ai-server/source/funkin/funkin_socket" target="_blank" class="secondary-link">
+                                    <i class="fab fa-github"></i>
+                                    Server Source Code
+                                </a>
+                                <a href="https://github.com/KhaledDev/Funkin-AI/tree/integration-ai-server/AI" target="_blank" class="secondary-link">
+                                    <i class="fab fa-github"></i>
+                                    Bot Source Code
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <span class="project-name">Advertisement whatsapp bot detector</span>
+                            <span class="project-role">Sole Developer</span>
+                            <span class="project-status">Active</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">AI-powered tool for detecting and managing advertisement bots on WhatsApp.</p>
+                            <div class ="secondary-links">
+                                <a href="https://github.com/KhaledDev/WhatsApp-Bot-Detector" target="_blank" class="secondary-link">
+                                    <i class="fab fa-github"></i>
+                                    Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <span class="project-name">Mai LLM AI</span>
+                        <span class="project-role">Developer</span>
+                        <span class="project-status">Transitioned to Mai Project</span>
+                    </div>
+                    
+                    <div class="project-item">
+                        <span class="project-name">Mai Discord Bot Wrapper</span>
+                        <span class="project-role">Developer</span>
+                        <span class="project-status">Transitioned to Mai Project</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Roblox Projects Section -->
+            <section class="projects-section roblox-projects">
+                <h2 class="section-title">
+                    <i class="fas fa-gamepad"></i>
+                    Roblox Projects
+                </h2>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <a href="https://www.roblox.com/games/9939359023/Jumping-Simulator" target="_blank" class="project-name">Jumping Simulator</a>
+                        <span class="project-role">Sole Developer</span>
+                        <span class="project-status">Published</span>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://www.roblox.com/games/13711662313/Obby-BUT-LIGHTNING-FLASHES-EVERY-SECOND" target="_blank" class="project-name">Obby but You Can't See</a>
+                        <span class="project-role">Sole Developer</span>
+                        <span class="project-status">Published</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Projects Section -->
+            <section class="projects-section other-projects">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>
+                    Other Projects
+                </h2>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <span class="project-name">Al Sakab "السكب"</span>
+                        <span class="project-role">Project Lead</span>
+                        <span class="project-status">Leadership</span>
+                    </div>
+                    <div class="project-item">
+                        <span class="project-name">Computer Programming Helper App</span>
+                        <span class="project-role">Sole Developer</span>
+                        <span class="project-status">Java</span>
+                    </div>
+                    
+                    <div class="project-item expandable" data-expandable="true">
+                        <div class="project-main">
+                            <a href="#" target="_blank" class="project-name">Business card QR Generator</a>
+                            <span class="project-status">Leadership</span>
+                            <span class="project-status">Open Source</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">React</span>
+                            <button class="expand-btn" aria-label="Expand project details">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">A web application to create and manage digital business cards with QR codes.</p>
+                            <div class="secondary-links">
+                                <a href="https://github.com/KhaledDev/Business-Card-QR-Generator" target="_blank" class="secondary-link">
+                                    <i class="fab fa-github"></i>
+                                    Source Code
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- 
+            TEMPLATES FOR NEW CONTENT:
+
+            1. NEW SECTION TEMPLATE:
+            <section class="projects-section NEW-SECTION-CLASS">
+                <h2 class="section-title">
+                    <i class="fas fa-ICON-NAME"></i>
+                    Section Title
+                </h2>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <a href="PROJECT_URL" target="_blank" class="project-name">Project Name</a>
+                        <span class="project-role">Your Role</span>
+                        <span class="project-status">Status</span>
+                    </div>
+                </div>
+            </section>
+
+            2. EXPANDABLE PROJECT TEMPLATE (for project lists):
+            <div class="project-item expandable" data-expandable="true">
+                <div class="project-main">
+                    <a href="PROJECT_URL" target="_blank" class="project-name">Project Name</a>
+                    <span class="project-role">Your Role</span>
+                    <span class="project-status">Status</span>
+                    <button class="expand-btn" aria-label="Expand project details">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="project-details">
+                    <p class="project-description">Brief description of the project...</p>
+                    <div class="secondary-links">
+                        <a href="GITHUB_URL" target="_blank" class="secondary-link">
+                            <i class="fab fa-github"></i>
+                            Source Code
+                        </a>
+                        <a href="DEMO_URL" target="_blank" class="secondary-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Live Demo
+                        </a>
+                        <a href="DOCS_URL" target="_blank" class="secondary-link">
+                            <i class="fas fa-book"></i>
+                            Documentation
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            3. EXPANDABLE PROJECT CARD TEMPLATE (for current projects):
+            <div class="project-card current expandable" data-expandable="true">
+                <div class="project-card-main">
+                    <h3>Project Title</h3>
+                    <p>Project description...</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Technology</span>
+                    </div>
+                    <a href="PROJECT_URL" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <button class="expand-btn card-expand-btn" aria-label="Expand project details">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="project-card-details">
+                    <div class="secondary-links">
+                        <a href="#" target="_blank" class="secondary-link">
+                            <i class="fas fa-icon"></i>
+                            Link Name
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            CSS for new sections:
+            .NEW-SECTION-CLASS {
+                border-left: 4px solid #COLOR;
+            }
+            .NEW-SECTION-CLASS .section-title i {
+                color: #COLOR;
+            }
+            -->
+        </main>
     </div>
+
+    <!-- Portfolio JavaScript -->
+    <script src="portfolio.js"></script>
 </body>
-
 </html>
