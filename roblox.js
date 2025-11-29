@@ -9,6 +9,8 @@ class RobloxProjectsManager {
         this.currentSlideshow = null;
         this.currentSlideIndex = 0;
         this.slideshowMedia = [];
+        this.currentPlayingVideo = null; // Track currently playing video
+        this.videoObserver = null; // Intersection observer for videos
         this.init();
     }
 
@@ -33,6 +35,7 @@ class RobloxProjectsManager {
             this.renderCommissions();
             this.setupEventListeners();
             this.setupSlideshowControls();
+            this.setupVideoViewportObserver();
         } catch (error) {
             console.error('Failed to setup Roblox projects:', error);
             this.showErrorMessage();
@@ -217,7 +220,7 @@ class RobloxProjectsManager {
                             </div>
                         `;
                     } else {
-                        content = `<video controls preload="metadata"><source src="${media.url}" type="video/mp4"></video>`;
+                        content = `<video controls muted preload="metadata"><source src="${media.url}" type="video/mp4"></video>`;
                     }
                 }
                 break;
@@ -425,6 +428,29 @@ class RobloxProjectsManager {
                 }
             });
         }
+
+        // Pause videos when clicking outside of video areas
+        document.addEventListener('click', (e) => {
+            const clickedVideo = e.target.closest('video, .video-thumbnail, .slideshow-slide');
+            if (!clickedVideo && !e.target.closest('.media-item')) {
+                // Only pause videos that are not in slideshow if slideshow is not open
+                if (!this.currentSlideshow) {
+                    this.pauseAllVideos();
+                }
+            }
+        });
+
+        // Pause videos when page loses focus
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                this.pauseAllVideos();
+            }
+        });
+
+        // Pause videos when window loses focus
+        window.addEventListener('blur', () => {
+            this.pauseAllVideos();
+        });
     }
 
     /**
@@ -506,6 +532,9 @@ class RobloxProjectsManager {
      * Close slideshow
      */
     closeSlideshow() {
+        // Pause all videos before closing
+        this.pauseAllVideos();
+
         const modal = document.getElementById('slideshow-modal');
         if (modal) {
             modal.classList.remove('active');
@@ -558,6 +587,9 @@ class RobloxProjectsManager {
         const slides = document.querySelectorAll('.slideshow-slide');
         const indicators = document.querySelectorAll('.slideshow-indicator');
 
+        // Pause all videos before switching
+        this.pauseAllVideos();
+
         // Update slides
         slides.forEach((slide, index) => {
             const isActive = index === this.currentSlideIndex;
@@ -568,6 +600,12 @@ class RobloxProjectsManager {
                 const videoThumbnail = slide.querySelector('.video-thumbnail');
                 if (videoThumbnail) {
                     this.loadVideoOnDemand(videoThumbnail);
+                }
+            } else {
+                // Pause any videos in inactive slides
+                const video = slide.querySelector('video');
+                if (video && !video.paused) {
+                    video.pause();
                 }
             }
         });
@@ -649,17 +687,117 @@ class RobloxProjectsManager {
         const videoUrl = videoThumbnail.getAttribute('data-video-url');
         const videoId = videoThumbnail.getAttribute('data-video-id');
 
+        // Pause any currently playing video before loading new one
+        this.pauseAllVideos();
+
         let videoContent = '';
+        let videoElement = null;
 
         if (videoType === 'youtube') {
-            videoContent = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allowfullscreen></iframe>`;
+            videoContent = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&enablejsapi=1" allowfullscreen></iframe>`;
         } else if (videoType === 'direct') {
-            videoContent = `<video controls autoplay preload="metadata"><source src="${videoUrl}" type="video/mp4"></video>`;
+            videoContent = `<video controls autoplay muted preload="metadata" data-video-managed="true"><source src="${videoUrl}" type="video/mp4"></video>`;
         }
 
         if (videoContent) {
             videoThumbnail.outerHTML = videoContent;
+            
+            // Find the newly created video element and set up event listeners
+            if (videoType === 'direct') {
+                // Use a small delay to ensure the element is in the DOM
+                setTimeout(() => {
+                    videoElement = document.querySelector(`video[src*="${videoUrl.split('/').pop()}"], video source[src*="${videoUrl.split('/').pop()}"]`);
+                    if (!videoElement && document.querySelector('video[data-video-managed="true"]')) {
+                        videoElement = document.querySelector('video[data-video-managed="true"]');
+                    }
+                    if (videoElement) {
+                        this.setupVideoEventListeners(videoElement);
+                        this.currentPlayingVideo = videoElement;
+                    }
+                }, 100);
+            }
         }
+    }
+
+    /**
+     * Setup event listeners for video elements
+     */
+    setupVideoEventListeners(videoElement) {
+        if (!videoElement) return;
+
+        // When video starts playing, pause all others
+        videoElement.addEventListener('play', () => {
+            this.pauseAllVideosExcept(videoElement);
+            this.currentPlayingVideo = videoElement;
+        });
+
+        // When video is paused, clear current playing reference
+        videoElement.addEventListener('pause', () => {
+            if (this.currentPlayingVideo === videoElement) {
+                this.currentPlayingVideo = null;
+            }
+        });
+
+        // When video ends, clear current playing reference
+        videoElement.addEventListener('ended', () => {
+            if (this.currentPlayingVideo === videoElement) {
+                this.currentPlayingVideo = null;
+            }
+        });
+    }
+
+    /**
+     * Pause all videos except the specified one
+     */
+    pauseAllVideosExcept(exceptVideo = null) {
+        const allVideos = document.querySelectorAll('video');
+        allVideos.forEach(video => {
+            if (video !== exceptVideo && !video.paused) {
+                video.pause();
+            }
+        });
+
+        // Also pause YouTube videos by reloading them without autoplay
+        const allIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        allIframes.forEach(iframe => {
+            if (iframe.src.includes('autoplay=1')) {
+                iframe.src = iframe.src.replace('autoplay=1', 'autoplay=0');
+            }
+        });
+    }
+
+    /**
+     * Pause all videos
+     */
+    pauseAllVideos() {
+        this.pauseAllVideosExcept(null);
+        this.currentPlayingVideo = null;
+    }
+
+    /**
+     * Setup viewport observer for videos
+     */
+    setupVideoViewportObserver() {
+        if (this.videoObserver) {
+            this.videoObserver.disconnect();
+        }
+
+        this.videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target.querySelector('video');
+                if (video && !entry.isIntersecting && !video.paused) {
+                    // Pause video when it goes out of viewport
+                    video.pause();
+                }
+            });
+        }, {
+            threshold: 0.1 // Pause when less than 10% visible
+        });
+
+        // Observe all media items
+        document.querySelectorAll('.media-item').forEach(mediaItem => {
+            this.videoObserver.observe(mediaItem);
+        });
     }
 
     /**
@@ -703,6 +841,15 @@ class RobloxProjectsManager {
                 clearInterval(parseInt(intervalId));
             }
         });
+
+        // Disconnect video observer
+        if (this.videoObserver) {
+            this.videoObserver.disconnect();
+            this.videoObserver = null;
+        }
+
+        // Pause all videos
+        this.pauseAllVideos();
 
         // Close slideshow
         this.closeSlideshow();
