@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhaledDev_ - Roblox Projects</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="roblox.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="navigation">
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Portfolio</span>
+                </a>
+            </div>
+            
+            <div class="hero">
+                <h1 class="title">Roblox Projects</h1>
+                <p class="subtitle">Game Development & Commissions</p>
+                <p class="description">Showcasing my Roblox development work including personal projects and client commissions</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Projects Section -->
+            <section class="projects-section roblox-projects-section">
+                <h2 class="section-title">
+                    <i class="fas fa-gamepad"></i>
+                    Personal Projects
+                </h2>
+                <div class="projects-container" id="projects-container">
+                    <!-- Projects will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <!-- Commissions Section -->
+            <section class="projects-section roblox-commissions-section">
+                <h2 class="section-title">
+                    <i class="fas fa-handshake"></i>
+                    Client Commissions
+                </h2>
+                <div class="projects-container" id="commissions-container">
+                    <!-- Commissions will be dynamically loaded here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Slideshow Modal -->
+    <div class="slideshow-modal" id="slideshow-modal">
+        <div class="slideshow-container">
+            <button class="slideshow-close" id="slideshow-close">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="slideshow-content" id="slideshow-content">
+                <!-- Slideshow content will be dynamically loaded -->
+            </div>
+            
+            <button class="slideshow-nav prev" id="slideshow-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <button class="slideshow-nav next" id="slideshow-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="slideshow-indicators" id="slideshow-indicators">
+                <!-- Indicators will be dynamically generated -->
+            </div>
+            
+            <div class="slideshow-caption" id="slideshow-caption">
+                <!-- Caption will be dynamically updated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Template (Hidden) -->
+    <template id="project-template">
+        <div class="project-item">
+            <div class="project-media">
+                <div class="media-preview" data-media-count="0">
+                    <div class="media-item active">
+                        <!-- Media content will be inserted here -->
+                    </div>
+                    <div class="media-overlay">
+                        <button class="view-slideshow-btn">
+                            <i class="fas fa-expand"></i>
+                            <span>View Gallery</span>
+                        </button>
+                    </div>
+                    <div class="media-counter">
+                        <span class="current-media">1</span> / <span class="total-media">1</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-header">
+                    <h3 class="project-title"></h3>
+                    <div class="project-meta">
+                        <span class="project-role"></span>
+                        <span class="project-status"></span>
+                    </div>
+                </div>
+                
+                <p class="project-description"></p>
+                
+                <div class="project-features">
+                    <h4>Key Features:</h4>
+                    <ul class="features-list">
+                        <!-- Features will be dynamically added -->
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <!-- Tech tags will be dynamically added -->
+                </div>
+                
+                <div class="project-links">
+                    <!-- Links will be dynamically added -->
+                </div>
+                
+                <div class="project-metrics">
+                    <!-- Metrics will be dynamically added for projects -->
+                </div>
+                
+                <div class="project-deliverables">
+                    <!-- Deliverables will be dynamically added for commissions -->
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Scripts -->
+    <script src="portfolio.js"></script>
+    <script src="roblox.js"></script>
+</body>
+</html>

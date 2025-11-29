@@ -1,0 +1,184 @@
+{
+  "projects": [
+    {
+      "id": "jumping-simulator",
+      "title": "Jumping Simulator",
+      "description": "A fun and engaging jumping simulator game where players can upgrade their jumping abilities, unlock new areas, and compete with friends. Features multiple worlds, power-ups, and a progression system that keeps players engaged.",
+      "longDescription": "Jumping Simulator is a comprehensive Roblox experience that combines simple mechanics with deep progression systems. Players start with basic jumping abilities and work their way up through various upgrades, unlocking new worlds and challenges. The game features a robust economy system, social features, and regular content updates.",
+      "techStack": ["Lua", "Roblox Studio"],
+      "status": "Published",
+      "role": "Sole Developer",
+      "gameUrl": "https://www.roblox.com/games/9939359023/Jumping-Simulator",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://youtu.be/uMcbYDFmRug",
+          "alt": "Jumping Simulator Dev log",
+          "caption": "Dev log video"
+        }
+      ]
+    },
+    {
+      "id": "obby-lightning",
+      "title": "Obby BUT LIGHTNING FLASHES EVERY SECOND",
+      "description": "A challenging obby (obstacle course) where visibility is limited to lightning flashes that occur every second. Players must memorize the course layout and navigate through darkness, creating a unique and thrilling gameplay experience.",
+      "longDescription": "This innovative obby takes the traditional obstacle course format and adds a unique twist - players can only see the course during brief lightning flashes. This creates an intense memory-based challenge where players must quickly observe their surroundings during each flash and navigate blindly between them.",
+      "techStack": ["Lua", "Roblox Studio", "Lighting Service", "TweenService"],
+      "status": "Published",
+      "role": "Sole Developer",
+      "gameUrl": "https://www.roblox.com/games/13711662313/Obby-BUT-LIGHTNING-FLASHES-EVERY-SECOND",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/shorts/_OcnM954lI8",
+          "alt": "Obby course during lightning flash",
+          "caption": "Brief visibility during lightning flash"
+        }
+      ]
+    },
+    {
+      "id": "egg-drop-animation",
+      "title": "Egg Drop Animation",
+      "description": "A Egg drop sequence, for when an egg event starts for Steal a MonstorRot",
+      "longDescription": "Developed a comprehensive egg drop animation system with VFX and smooth animations that signifies the start of an egg event for Steal a MonstorRot.",
+      "techStack": ["Lua", "Roblox Studio", "TweenService", "Debris", "Particle Effects"],
+      "status": "Completed",
+      "role": "Sole Developer",
+      "gameUrl": "https://www.roblox.com/games/81718861111708/Steal-a-Monster-Brainrot",
+      "media": [
+        {
+          "type": "video",
+          "url": "Media/Roblox-Projects/Egg-Drop-Animation/2025-07-04 17-40-01.mp4",
+          "alt": "Egg drop animation demonstration",
+          "caption": "Physics-based egg dropping with realistic animations"
+        }
+      ]
+    },
+    {
+      "id": "rvc-system",
+      "title": "Rockets vs Cars",
+      "description": "A game where players can launch rockets at cars to destroy them, with the ability to upgrade their rocket launcher and cars to make them more powerful.",
+      "longDescription": "Created a game where players can launch rockets at cars to destroy them, with the ability to upgrade their rocket launcher and cars to make them more powerful.",
+      "techStack": ["Lua", "Roblox Studio", "TweenService", "ReplicatedStorage", "ProfileService"],
+      "status": "In Development",
+      "role": "Lead Developer",
+      "gameUrl": "https://www.roblox.com/games/124791055806257/RPGS-VS-CARS",
+      "media": [
+        {
+          "type": "video",
+          "url": "Media/Roblox-Projects/RVC/Progress.mp4",
+          "alt": "Rockets vs Cars development progress",
+          "caption": "Rockets vs Cars development progress"
+        }
+      ]
+    }
+  ],
+  "commissions": [
+    {
+      "id": "bomb-minigames",
+      "title": "Bomb Minigames System",
+      "description": "A comprehensive minigame system featuring multiple bomb-themed challenges, quest system, reward wheels, and interactive loading screens. Built for enhanced player engagement and retention.",
+      "longDescription": "Developed a complete minigame ecosystem for a client focusing on bomb-themed challenges. The system includes a sophisticated quest management system, reward mechanics with spinning wheels, custom loading screens, and multiple interconnected minigames designed to maximize player engagement and session time.",
+      "techStack": ["Lua", "Roblox Studio", "TweenService", "ReplicatedStorage", "DataStore2"],
+      "status": "Completed",
+      "role": "Lead Developer",
+      "client": "Minigame Studios",
+      "duration": "2 months",
+      "media": [
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/Bomb-Minigames/BM_Loading_Screen_Preview.mp4",
+          "alt": "Bomb Minigames loading screen",
+          "caption": "Custom animated loading screen with branding"
+        },
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/Bomb-Minigames/BM_Quest_Claiming_Preview.mp4",
+          "alt": "Quest claiming system",
+          "caption": "Interactive quest completion and reward claiming"
+        },
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/Bomb-Minigames/BM_Quests_Preview_1.mp4",
+          "alt": "Quest system overview",
+          "caption": "Comprehensive quest management interface"
+        },
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/Bomb-Minigames/BM_Wheel_Preview_1.mp4",
+          "alt": "Reward wheel system",
+          "caption": "Spinning wheel reward mechanism"
+        }
+      ]
+    },
+    {
+      "id": "train-controls",
+      "title": "Advanced Train Control System",
+      "description": "A sophisticated train simulation system with realistic controls, multiple train types, and complex railway mechanics. Features detailed physics simulation and interactive control panels.",
+      "longDescription": "Created an advanced train control system for a client's railway simulation game. The project involved implementing realistic train physics, multiple locomotive types, complex signaling systems, and intuitive control interfaces. The system supports both manual and automated train operations.",
+      "techStack": ["Lua", "Roblox Studio", "BodyVelocity", "Custom Physics"],
+      "status": "Completed",
+      "role": "Sole Developer",
+      "media": [
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/TrainControls/2024-12-22 20-37-29.mp4",
+          "alt": "Train control interface",
+          "caption": "Interactive train control panel and systems"
+        },
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/TrainControls/2024-12-23 10-59-50.mp4",
+          "alt": "Train physics demonstration",
+          "caption": "Realistic train movement and physics simulation"
+        },
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/TrainControls/2024-12-23 14-25-57.mp4",
+          "alt": "Advanced train features",
+          "caption": "Multiple train types and advanced control features"
+        }
+      ]
+    },
+    {
+      "id": "donation-board",
+      "title": "Interactive Donation Board",
+      "description": "A dynamic donation tracking and display system with real-time updates, donor recognition, and customizable visual effects. Designed to encourage community engagement and support.",
+      "longDescription": "Developed an interactive donation board system that provides real-time tracking of donations, donor recognition features.",
+      "techStack": ["Lua", "Roblox Studio", "TweenService", "DataStore"],
+      "status": "Completed",
+      "role": "Sole Developer",
+      "media": [
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/Donation-Board/2025-01-12 00-38-12.mp4",
+          "alt": "Interactive donation board system",
+          "caption": "Real-time donation tracking and visual effects"
+        }
+      ]
+    },
+    {
+      "id": "blue-lock-movement",
+      "title": "Blue Lock Rivals Movement System",
+      "description": "A sophisticated character movement system inspired by Blue Lock anime, featuring advanced soccer mechanics, skill-based movement, and competitive gameplay elements.",
+      "longDescription": "Created a comprehensive movement system for a Blue Lock-inspired soccer game. The project involved implementing realistic soccer physics, skill-based movement mechanics, special abilities, and competitive gameplay features that capture the essence of the popular anime series.",
+      "techStack": ["Lua", "Roblox Studio", "BodyVelocity", "UserInputService", "TweenService"],
+      "status": "Completed",
+      "role": "Sole Developer",
+      "media": [
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/Blue-lock-rivals-movement/BlueLockRivalsMovement_preview.mp4",
+          "alt": "Blue Lock movement system demonstration",
+          "caption": "Advanced soccer movement mechanics and skills"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2024-11-29",
+    "version": "1.0.0",
+    "totalProjects": 4,
+    "totalCommissions": 4
+  }
+}
