@@ -1,38 +1,38 @@
 {
   "projects": [
     {
-      "id": "jumping-simulator",
-      "title": "Jumping Simulator",
-      "description": "A fun and engaging jumping simulator game where players can upgrade their jumping abilities, unlock new areas, and compete with friends. Features multiple worlds, power-ups, and a progression system that keeps players engaged.",
-      "longDescription": "Jumping Simulator is a comprehensive Roblox experience that combines simple mechanics with deep progression systems. Players start with basic jumping abilities and work their way up through various upgrades, unlocking new worlds and challenges. The game features a robust economy system, social features, and regular content updates.",
-      "techStack": ["Lua", "Roblox Studio"],
-      "status": "Published",
-      "role": "Sole Developer",
-      "gameUrl": "https://www.roblox.com/games/9939359023/Jumping-Simulator",
+      "id": "rvc-system",
+      "title": "Rockets vs Cars",
+      "description": "A game where players can launch rockets at cars to destroy them, with the ability to upgrade their rocket launcher and cars to make them more powerful.",
+      "longDescription": "Created a game where players can launch rockets at cars to destroy them, with the ability to upgrade their rocket launcher and cars to make them more powerful.",
+      "techStack": ["Lua", "Roblox Studio", "TweenService", "ReplicatedStorage", "ProfileService"],
+      "status": "In Development",
+      "role": "Lead Developer",
+      "gameUrl": "https://www.roblox.com/games/124791055806257/RPGS-VS-CARS",
       "media": [
         {
           "type": "video",
-          "url": "https://youtu.be/uMcbYDFmRug",
-          "alt": "Jumping Simulator Dev log",
-          "caption": "Dev log video"
+          "url": "Media/Roblox-Projects/RVC/Progress.mp4",
+          "alt": "Rockets vs Cars development progress",
+          "caption": "Rockets vs Cars development progress"
         }
       ]
     },
     {
-      "id": "obby-lightning",
-      "title": "Obby BUT LIGHTNING FLASHES EVERY SECOND",
-      "description": "A challenging obby (obstacle course) where visibility is limited to lightning flashes that occur every second. Players must memorize the course layout and navigate through darkness, creating a unique and thrilling gameplay experience.",
-      "longDescription": "This innovative obby takes the traditional obstacle course format and adds a unique twist - players can only see the course during brief lightning flashes. This creates an intense memory-based challenge where players must quickly observe their surroundings during each flash and navigate blindly between them.",
-      "techStack": ["Lua", "Roblox Studio", "Lighting Service", "TweenService"],
-      "status": "Published",
-      "role": "Sole Developer",
-      "gameUrl": "https://www.roblox.com/games/13711662313/Obby-BUT-LIGHTNING-FLASHES-EVERY-SECOND",
+      "id": "steal-a-boat",
+      "title": "Steal a Boat",
+      "description": "A Trend game where players can buy and steal boats from other players.",
+      "longDescription": "Developed a game where players can buy and steal boats from other players.",
+      "techStack": ["Lua", "Roblox Studio", "TweenService", "ReplicatedStorage", "ProfileService", "Kit"],
+      "status": "Completed",
+      "role": "Sole Developer & Some Building",
+      "gameUrl": "https://www.roblox.com/games/128119503983854/UPD-Steal-a-Boat",
       "media": [
         {
           "type": "video",
-          "url": "https://www.youtube.com/shorts/_OcnM954lI8",
-          "alt": "Obby course during lightning flash",
-          "caption": "Brief visibility during lightning flash"
+          "url": "Media/Roblox-Projects/Steal-A-Boat/Steal a boat showcase.mp4",
+          "alt": "Steal a Boat showcase",
+          "caption": "Steal a Boat showcase"
         }
       ]
     },
@@ -53,27 +53,69 @@
           "caption": "Physics-based egg dropping with realistic animations"
         }
       ]
-    },
-    {
-      "id": "rvc-system",
-      "title": "Rockets vs Cars",
-      "description": "A game where players can launch rockets at cars to destroy them, with the ability to upgrade their rocket launcher and cars to make them more powerful.",
-      "longDescription": "Created a game where players can launch rockets at cars to destroy them, with the ability to upgrade their rocket launcher and cars to make them more powerful.",
-      "techStack": ["Lua", "Roblox Studio", "TweenService", "ReplicatedStorage", "ProfileService"],
-      "status": "In Development",
-      "role": "Lead Developer",
-      "gameUrl": "https://www.roblox.com/games/124791055806257/RPGS-VS-CARS",
-      "media": [
-        {
-          "type": "video",
-          "url": "Media/Roblox-Projects/RVC/Progress.mp4",
-          "alt": "Rockets vs Cars development progress",
-          "caption": "Rockets vs Cars development progress"
-        }
-      ]
     }
   ],
   "commissions": [
+    {
+      "id": "steal-a-kit",
+      "title": "Steal a Kit",
+      "description": "A kit to make the development of Steal a Games easier.",
+      "longDescription": "Created a framework to make the development of Steal a Games easier. This framework includes a kit, a system, and a UI.",
+      "techStack": ["Lua", "Roblox Studio", "TweenService", "ReplicatedStorage", "ProfileService", "Kit"],
+      "status": "Completed",
+      "role": "Everything",
+      "gameUrl": "https://www.roblox.com/games/128119503983854/UPD-Steal-a-Boat",
+      "media": [
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/Steal-A-Kit/Steal_a_framework.mp4",
+          "alt": "Steal a Kit Framework",
+          "caption": "Steal a Kit Framework"
+        }
+      ]
+    },
+    {
+      "id": "My-Singing-kit",
+      "title": "My Singing Kit",
+      "description": "A kit to make the development of My Singing Game easier.",
+      "longDescription": "Created a framework to make the development of Singing Games easier. This framework includes a kit, a system, and a UI.",
+      "techStack": ["Lua", "Roblox Studio", "TweenService", "ReplicatedStorage", "ProfileService", "Kit"],
+      "status": "Completed",
+      "role": "Everything",
+      "gameUrl": "https://www.roblox.com/games/128119503983854/UPD-Steal-a-Boat",
+      "media": [
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/My-Singing-Kit/Index.mp4",
+          "alt": "My Singing Kit main interface",
+          "caption": "Unlocked Characters"
+        },
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/My-Singing-Kit/ForeverPack.mp4",
+          "alt": "Forever Pack system",
+          "caption": "Forever Pack purchase and management system"
+        },
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/My-Singing-Kit/Grass.mp4",
+          "alt": "Grass environment system",
+          "caption": "Dynamic grass environment and terrain system"
+        },
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/My-Singing-Kit/Placing.mp4",
+          "alt": "Object placement system",
+          "caption": "Interactive object placement and positioning"
+        },
+        {
+          "type": "video",
+          "url": "Media/Roblox-Commissions/My-Singing-Kit/Hatch Animation.mp4",
+          "alt": "Hatch animation system",
+          "caption": "Smooth hatching animations and effects"
+        }
+      ]
+    },
     {
       "id": "bomb-minigames",
       "title": "Bomb Minigames System",
@@ -178,7 +220,7 @@
   "metadata": {
     "lastUpdated": "2024-11-29",
     "version": "1.0.0",
-    "totalProjects": 4,
-    "totalCommissions": 4
+    "totalProjects": 3,
+    "totalCommissions": 6
   }
 }

@@ -180,7 +180,7 @@ class RobloxProjectsManager {
     /**
      * Set media content for a media item
      */
-    setMediaContent(mediaItem, media) {
+    setMediaContent(mediaItem, media, isLazy = true) {
         let content = '';
         
         switch (media.type) {
@@ -189,12 +189,36 @@ class RobloxProjectsManager {
                 break;
             case 'video':
                 if (media.url.includes('youtube.com') || media.url.includes('youtu.be')) {
-                    // YouTube embed
+                    // YouTube embed - use thumbnail for lazy loading
                     const videoId = this.extractYouTubeId(media.url);
-                    content = `<iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>`;
+                    if (isLazy) {
+                        content = `
+                            <div class="video-thumbnail" data-video-id="${videoId}" data-video-type="youtube">
+                                <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="${media.alt || ''}" loading="lazy">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        content = `<iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>`;
+                    }
                 } else {
-                    // Direct video
-                    content = `<video controls><source src="${media.url}" type="video/mp4"></video>`;
+                    // Direct video - use poster image for lazy loading
+                    if (isLazy) {
+                        content = `
+                            <div class="video-thumbnail" data-video-url="${media.url}" data-video-type="direct">
+                                <video preload="none" poster="">
+                                    <source src="${media.url}" type="video/mp4">
+                                </video>
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        content = `<video controls preload="metadata"><source src="${media.url}" type="video/mp4"></video>`;
+                    }
                 }
                 break;
             default:
@@ -202,6 +226,11 @@ class RobloxProjectsManager {
         }
         
         mediaItem.innerHTML = content;
+        
+        // Setup lazy video loading
+        if (isLazy && media.type === 'video') {
+            this.setupLazyVideoLoading(mediaItem);
+        }
     }
 
     /**
@@ -212,14 +241,15 @@ class RobloxProjectsManager {
         const mediaItem = mediaPreview.querySelector('.media-item');
         const currentMediaSpan = mediaPreview.querySelector('.current-media');
 
-        // Auto-cycle through media every 3 seconds
+        // Auto-cycle through media every 5 seconds (increased from 3 for better performance)
         const cycleInterval = setInterval(() => {
             currentIndex = (currentIndex + 1) % mediaArray.length;
-            this.setMediaContent(mediaItem, mediaArray[currentIndex]);
+            // Always use lazy loading for preview cycling to prevent loading all videos
+            this.setMediaContent(mediaItem, mediaArray[currentIndex], true);
             if (currentMediaSpan) {
                 currentMediaSpan.textContent = currentIndex + 1;
             }
-        }, 3000);
+        }, 5000);
 
         // Store interval for cleanup
         mediaPreview.setAttribute('data-cycle-interval', cycleInterval);
@@ -453,7 +483,8 @@ class RobloxProjectsManager {
         mediaArray.forEach((media, index) => {
             const slide = document.createElement('div');
             slide.className = `slideshow-slide ${index === startIndex ? 'active' : ''}`;
-            this.setMediaContent(slide, media);
+            // Only load the first slide immediately, others are lazy loaded
+            this.setMediaContent(slide, media, index !== startIndex);
             content.appendChild(slide);
         });
 
@@ -529,7 +560,16 @@ class RobloxProjectsManager {
 
         // Update slides
         slides.forEach((slide, index) => {
-            slide.classList.toggle('active', index === this.currentSlideIndex);
+            const isActive = index === this.currentSlideIndex;
+            slide.classList.toggle('active', isActive);
+            
+            // Load video on demand when slide becomes active
+            if (isActive) {
+                const videoThumbnail = slide.querySelector('.video-thumbnail');
+                if (videoThumbnail) {
+                    this.loadVideoOnDemand(videoThumbnail);
+                }
+            }
         });
 
         // Update indicators
@@ -571,6 +611,54 @@ class RobloxProjectsManager {
             captionElement.style.display = 'block';
         } else {
             captionElement.style.display = 'none';
+        }
+    }
+
+    /**
+     * Setup lazy video loading with intersection observer
+     */
+    setupLazyVideoLoading(mediaItem) {
+        const videoThumbnail = mediaItem.querySelector('.video-thumbnail');
+        if (!videoThumbnail) return;
+
+        // Create intersection observer for viewport detection
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.loadVideoOnDemand(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '50px' // Start loading when video is 50px away from viewport
+        });
+
+        observer.observe(videoThumbnail);
+
+        // Also setup click to play functionality
+        videoThumbnail.addEventListener('click', () => {
+            this.loadVideoOnDemand(videoThumbnail);
+        });
+    }
+
+    /**
+     * Load video on demand when needed
+     */
+    loadVideoOnDemand(videoThumbnail) {
+        const videoType = videoThumbnail.getAttribute('data-video-type');
+        const videoUrl = videoThumbnail.getAttribute('data-video-url');
+        const videoId = videoThumbnail.getAttribute('data-video-id');
+
+        let videoContent = '';
+
+        if (videoType === 'youtube') {
+            videoContent = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allowfullscreen></iframe>`;
+        } else if (videoType === 'direct') {
+            videoContent = `<video controls autoplay preload="metadata"><source src="${videoUrl}" type="video/mp4"></video>`;
+        }
+
+        if (videoContent) {
+            videoThumbnail.outerHTML = videoContent;
         }
     }
 
